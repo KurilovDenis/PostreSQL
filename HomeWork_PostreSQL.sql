@@ -78,7 +78,7 @@
 
   select orderlineid from 
   orderlines inner join products on orderlines.prod_id=products.prod_id
-  where actor = 'CHEVY FOSTER
+  where actor = 'CHEVY FOSTER'
 
 --16. Сколько таких позиций?
   
@@ -86,13 +86,13 @@
 
 --17. SQL запрос для вывода покупателей, купивших фильмы с CHEVY FOSTER.
 
-  select * from customers
-  where customerid in (
-  select customerid from orders
-  where orderid IN (
-  select orderid from
-  orderlines inner join products on orderlines.prod_id=products.prod_id
-  where actor = 'CHEVY FOSTER'))
+select * from customers
+where customerid in (
+select customerid from orders
+where orderid IN (
+select orderid from
+orderlines inner join products on orderlines.prod_id=products.prod_id
+where actor = 'CHEVY FOSTER'))
 
 --18. Сколько фанатов у CHEVY FOSTER?
   
